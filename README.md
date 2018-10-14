@@ -8,7 +8,10 @@ but also in the off-canvas navigation, which had slightly different HTML stuctur
 framework being used (Zurb Foundation).
 
 The navigation needed to differentiate between three different kinds of items within the navigation:
-a summary item to be placed at the top of the navigation, high-level topic items, and items that could be placed within these topics.
+
+* a summary item to be placed at the top of the navigation
+* high-level topic items, and 
+* items that could be placed within these topics.
 
 In addition, there needed to be the ability to separate these navigations into up to three columns within the dropdown.
 
@@ -22,16 +25,16 @@ high-level topic items and within those high-level topics, items to be placed wi
 
 The back-end of the component would read in the data entered by the author and create an ArrayList representing each of the
 columns to be output in the dropdown. Each column would be represented by another ArrayList, this time containing a custom class
-(Topic). This class held a __Map<String, String>__ representing the high-level topic page and an __ArrayList<Map<String, String>>__
+(_Topic_). This class held a __Map<String, String>__ representing the high-level topic page and an __ArrayList<Map<String, String>>__
 representing the items that had been placed within this topic.
 
 The HTL for this component would be split into two scripts: one to render the global navigation in the header of the page, and
 another to render the global navigation in the off-canvas navigation of the page. The second script would be called using Sling
-selectors within a data-sly-resource call.
+selectors within a __data-sly-resource__ call.
 
 Each HTL script would iterate through the columns as returned by the back-end. It would then have to iterate again through the topics
 contained within each column, and potentially iterate once more through the items placed within the topics.
 
 Once the components were created and populated with data, the template editor could set which of these global navigation section
 components would actually be used on each template (and the order in which they appeared) by setting them in the policies of the 
-topbar and off-canvas navigation structural components.
+__topbar__ and __off-canvas navigation__ structural components.
