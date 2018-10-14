@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Component"
+    jcr:title="Global Navigation Section"
+    jcr:description="Creates one editable section of the global navigation"
+    cq:icon="dropdown"
+    abbreviation="GN"
+    componentGroup="FredHutch.org Structure Components"/>

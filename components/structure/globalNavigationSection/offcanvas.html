@@ -1,0 +1,28 @@
+<!--/* 
+    Global Navigation Section
+    Off-canvas navigation rendering
+    Use the 'offcanvas' sling selector to invoke this rendering of the component
+*/-->
+<sly data-sly-use.navSection="org.fhcrc.www.core.components.GlobalNavigationSection"
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></sly>
+<li class="top-level" data-sly-test.hasContent="${navSection.title}">
+    <a href="#0"><span>${navSection.title}</span></a>
+    <i class="sprites expander"></i>
+    <ul class="menu vertical nested">
+        <li><a href="${navSection.overviewURL}">${navSection.overviewText}</a></li>
+        <!--/* Columns are meaningless in this version, so just iterate through them */-->
+        <sly data-sly-list.column=${navSection.columns}>
+            <sly data-sly-list.topics="${column}">
+                <li><a href="${topics.headPage.path}">${topics.headPage.title}</a>
+                    <sly data-sly-test="${topics.items}">
+                        <i class="sprites expander"></i>
+                        <ul class="menu vertical nested" data-sly-list.subTopic="${topics.items}">
+                            <li><a href="${subTopic.path}">${subTopic.title}</a></li>
+                        </ul>
+                    </sly>
+                </li>
+            </sly>
+        </sly>
+    </ul>
+</li>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasContent}"></sly>

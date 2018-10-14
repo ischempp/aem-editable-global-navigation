@@ -1,0 +1,24 @@
+<!--/* div.off-canvas-wrapper is closed in the file offCanvasNav_end.html */-->
+<div class="off-canvas-wrapper">
+    <div id="offCanvas" class="off-canvas position-right" data-off-canvas data-transition="overlap">
+        <div class="off-canvas-search-container">
+            <i id="off-canvas-search-icon" class="sprites search"></i>
+            <form name="search-form">
+                <input type="text" id="off-canvas-search" name="q" placeholder="Search">
+            </form>
+        </div>
+        <nav id="off-canvas-nav">
+            <ul class="vertical menu accordion-menu" data-accordion-menu data-sly-list.section="${currentStyle.navSections}">
+                <sly data-sly-resource="${section @ selectors='offcanvas'}"></sly>
+            </ul>
+        </nav>
+        <nav id="off-canvas-utility-nav">
+            <ul>
+                <li class="utility-item"><a href="#0">Careers</a></li>
+                <li class="utility-item"><a href="#0">News</a></li>
+                <li class="utility-item"><a href="#0">Events</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--/* div.off-canvas-content is closed in the file offCanvasNav_end */-->
+    <div class="off-canvas-content" data-off-canvas-content>

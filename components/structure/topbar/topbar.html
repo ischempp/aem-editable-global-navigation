@@ -1,0 +1,38 @@
+<header>
+    <div class="aem-Grid aem-Grid--default--12 aem-Grid--tablet--6 aem-Grid--phone--6">
+        <div class="aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--tablet--6 aem-GridColumn--phone--6">
+            <div id="flex-head" class="header-container">
+                <div class="logo header-item">
+                    <a href="https://www.fredhutch.org" class="sprites fh-logo-tagline"></a> 
+                </div>
+                <nav id="global-nav">
+                    <div class="global-nav-container">
+                        <!--/* Navigation sections are defined in the policy of the component */-->
+                        <ul class="dropdown menu top-level" data-dropdown-menu>
+                            <sly data-sly-list.section="${currentStyle.navSections}">
+                                <sly data-sly-resource="${section}"></sly>
+                            </sly>
+                        </ul>
+                    </div>
+                </nav>
+                <nav id="utility-nav">
+                    <div class="utility-nav-container">
+                        <ul>
+                            <li class="nav-item"><a href="#0">Careers</a></li>
+                            <li class="nav-item"><a href="#0">News</a></li>
+                            <li class="nav-item"><a href="#0">Events</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="search-container">
+                    <i id="search-icon" class="sprites search"></i>
+                    <form name="search-form">
+                        <input type="text" id="search" name="q" value="Search">
+                    </form>
+                </div>
+                <div class="donate-button-container"><a href="#0" class="donate-button"><span>Donate Now</span></a></div>
+                <div class="hamburger-menu-container"><button class="sprites menu" data-toggle="offCanvas"></button></div>
+            </div>
+        </div>
+    </div>
+</header>

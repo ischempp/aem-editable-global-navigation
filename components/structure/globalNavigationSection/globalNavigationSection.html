@@ -1,0 +1,20 @@
+<sly data-sly-use.navSection="org.fhcrc.www.core.components.GlobalNavigationSection"
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></sly>
+<li data-sly-test.hasContent="${navSection.title}" class="nav-item">${navSection.title}
+    <ul class="dropdown-internal">
+        <li class="overview-item"><a href="${navSection.overviewURL}">${navSection.overviewText}</a></li>
+        <li class="columns-item">
+            <sly data-sly-list.column=${navSection.columns}>
+                <div class="nav-column">
+                    <sly data-sly-list.topics="${column}">
+                        <span class="overview-item"><a href="${topics.headPage.path}">${topics.headPage.title}</a></span>
+                        <sly data-sly-list.subTopic="${topics.items}">
+                            <span><a href="${subTopic.path}">${subTopic.title}</a></span>
+                        </sly>
+                    </sly>
+                </div>
+            </sly>
+        </li>
+    </ul>
+</li>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasContent}"></sly>
