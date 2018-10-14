@@ -38,3 +38,6 @@ contained within each column, and potentially iterate once more through the item
 Once the components were created and populated with data, the template editor could set which of these global navigation section
 components would actually be used on each template (and the order in which they appeared) by setting them in the policies of the 
 __topbar__ and __off-canvas navigation__ structural components.
+
+Dialog validation was also created to ensure that template editors couldn't accidentally add the wrong node to the design dialog
+of the components.
